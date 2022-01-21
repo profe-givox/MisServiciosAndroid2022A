@@ -23,10 +23,17 @@ public class MiIntentService extends IntentService {
     protected void onHandleIntent(@Nullable Intent intent) {
         //Aqui debe se debe llevar acabo la tarea prolongada
         // o de bloque
+        /*
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
-        for(int i=0; i< 99999999; i++){
-            Log.d("MiIntentService", "Iteracion: " + 1);
+        for(int i=0; i< intent.getIntExtra("arg1", 999999); i++){
+            Log.d("MiIntentService", "Iteracion: " + i);
         }
+
 
 
     }

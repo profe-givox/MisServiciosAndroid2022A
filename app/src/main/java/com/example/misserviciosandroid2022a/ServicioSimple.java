@@ -10,6 +10,7 @@ import android.os.StrictMode;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.JobIntentService;
 import androidx.recyclerview.widget.AsyncDifferConfig;
 
 import java.security.Provider;
@@ -20,7 +21,7 @@ public class ServicioSimple extends Service {
     private Thread hilo;
 
 
-/*    AsyncTask<Integer, Integer, String> miTarea = new AsyncTask<Integer, Integer, String>() {
+    AsyncTask<Integer, Integer, String> miTarea = new AsyncTask<Integer, Integer, String>() {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -48,9 +49,9 @@ public class ServicioSimple extends Service {
 
             super.onPostExecute(s);
 
-            Log.d("ServicioSimpleAsynTask", "Iteracion: " + 1);
+            Log.d("ServicioSimpleAsynTask", "Iteracion: " + s);
         }
-    } ;*/
+    } ;
 
     @Nullable
     @Override
@@ -76,7 +77,7 @@ public class ServicioSimple extends Service {
 
         //paa autogestionar la destruccion del servicio se puede invocar el metodo stopSelf
 
-        //miTarea.execute(999999);
+        miTarea.execute(999999);
 
          hilo = new Thread(new Runnable() {
             @Override
@@ -101,12 +102,13 @@ public class ServicioSimple extends Service {
         //stopSelf();
 
 
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
 
     }
 
     @Override
     public void onDestroy() {
+        Log.d("ServicioSimpleAsynTask", "destruido");
 
         super.onDestroy();
 
