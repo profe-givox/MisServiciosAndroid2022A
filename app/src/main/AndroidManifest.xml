@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MisServiciosAndroid2022A">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityServicioVinculado"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".ServicioSimple"
-            android:exported="false" >
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-        </service>
+        </activity>
 
-        <service android:name=".MiIntentService" android:exported="false">
+        <service
+            android:name=".ServicioSimple"
+            android:exported="false"></service>
+        <service
+            android:name=".MiIntentService"
+            android:exported="false"></service>
+
+        <service
+            android:name=".ServicioVinculado"
+            android:exported="false">
 
         </service>
     </application>
