@@ -36,6 +36,24 @@ public class ServicioVinculado extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        /*
+        Intent notificationIntent = new Intent(this, ExampleActivity.class);
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+        Notification notification =
+                new Notification.Builder(this, CHANNEL_DEFAULT_IMPORTANCE)
+                        .setContentTitle(getText(R.string.notification_title))
+                        .setContentText(getText(R.string.notification_message))
+                        .setSmallIcon(R.drawable.icon)
+                        .setContentIntent(pendingIntent)
+                        .setTicker(getText(R.string.ticker_text))
+                        .build();
+
+        // Notification ID cannot be 0.
+        startForeground(ONGOING_NOTIFICATION_ID, notification);
+         */
+
         return super.onStartCommand(intent, flags, startId);
     }
 
